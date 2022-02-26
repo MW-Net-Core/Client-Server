@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Send Data</title>
+</head>
+<body>
+    <button id="Send_Btn">Send</button>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+    $('#Send_Btn').click(function () {
+        $.ajax({
+            url: 'http://localhost:26147/api/Employee/Add-Emp/',
+            type: 'POST', 
+            data: {
+                "employeeId": 1,
+                "employeeName": "Muhammad Waleed Khan Zia"
+            }, success: function (data) {
+                alert(data);
+            }
+        });
+    });
+
+</script>
